@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: 2016-06-22 16:45:03
+  people: 1
+  user_id: 1
+  restaurant_id: 1
+  availability: false
+
+two:
+  time: 2016-06-22 16:45:03
+  people: 1
+  user_id: 1
+  restaurant_id: 1
+  availability: false
