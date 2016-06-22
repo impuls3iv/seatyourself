@@ -9,7 +9,7 @@ User.create(
 
   email: 'jonny@jon.com',
   username: 'jon11',
-  phone: '5555'
+  phone: '6472123456'
 
 )
 
@@ -17,7 +17,7 @@ User.create(
 
 email: 'sally@jon.com',
 username: 'sal11',
-phone: '5555'
+phone: '4168587777'
 
 )
 
@@ -25,6 +25,49 @@ User.create(
 
 email: 'mike@jon.com',
 username: 'mike11',
-phone: '5579'
+phone: '9057315555'
+
+)
+
+Restaurant.create(
+
+  name: 'McDonalds',
+  category: 'fast-food',
+  price: 1,
+  capacity: 50
+#price levels are 1, 2, 3, 4
+)
+
+Restaurant.create(
+
+  name: 'DQ',
+  category: 'fast-food',
+  price: 2,
+  capacity: 25
+#price levels are 1, 2, 3, 4
+)
+
+Restaurant.create(
+
+  name: 'Subway',
+  category: 'sandwiches',
+  price: 2,
+  capacity: 10
+#price levels are 1, 2, 3, 4
+)
+#
+# t.datetime :time
+# t.integer :people
+# t.integer :user_id
+# t.integer :restaurant_id
+# t.boolean :availability
+
+Reservation.create(
+
+  time: 20160621,
+  people: 5,
+  user_id: 1,
+  restaurant_id: 1,
+  availability: 1
 
 )
