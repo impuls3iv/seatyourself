@@ -1,0 +1,10 @@
+<h1>List of Restaurants</h1>
+
+<%= @restaurants.each do |rest|  %>
+  <p>
+    <%= rest.name %><br>
+    <%= rest.category %><br>
+    <%= rest.price %><br>
+    <%= rest.capacity %><br>
+  </p>
+<% end %>
