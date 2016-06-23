@@ -67,8 +67,18 @@ Reservation.create(
 
   time: 20160621,
   people: 5,
-  user_id: 1,
+  user_id: 13,
   restaurant_id: 1,
+  availability: 1
+
+)
+
+Reservation.create(
+
+  time: 20170621,
+  people: 2,
+  user_id: 13,
+  restaurant_id: 2,
   availability: 1
 
 )
