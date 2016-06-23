@@ -1,20 +1,21 @@
 <h1>Master Reservations list</h1>
 
 <%= @reservations.each do |x| %>
-<p>
-  Time:
-  <%= x.time %><br>
+  <p>
+    Time:
+    <%= x.time %><br>
 
-  People:
-  <%= x.people %><br>
+    People:
+    <%= x.people %><br>
 
-  User id:
-  <%= x.user_id %><br>
+    User id:
+    <%= x.user_id %><br>
 
-  Restaurant id:
-  <%= x.restaurant_id %><br>
+    Restaurant id:
+    <%= x.restaurant_id %><br>
 
-  Availability:
-  <%= x.availability %><br>
-  <%= link_to 'Show', reservation_path(x) %> | <%= link_to 'Edit', edit_reservation_path(x) %> | <%= link_to 'Delete', x, method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
-</p>
+    Availability:
+    <%= x.availability %><br>
+    <%= link_to 'Show', reservation_path(x) %> | <%= link_to 'Edit', edit_reservation_path(x) %> | <%= link_to 'Delete', x, method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+  </p>
+<% end %>
