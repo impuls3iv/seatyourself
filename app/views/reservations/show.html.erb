@@ -1,13 +1,13 @@
 <h1>Your Reservation</h1>
 <p>
-  Time
+  Time:
   <%= @reservation.time %><br>
-  People
+  People:
   <%= @reservation.people %><br>
-  User id
-  <%= @reservation.user_id %><br>
-  Restaurant id
-  <%= @reservation.restaurant_id %><br>
-  Availability
+  User name:
+  <%= @reservation.user.username %><br>
+  Restaurant name:
+  <%= @reservation.restaurant.name %><br>
+  Availability:
   <%= @reservation.availability %><br>
 </p>
