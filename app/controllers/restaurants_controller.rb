@@ -1,5 +1,9 @@
 class RestaurantsController < ApplicationController
-  # before_action :require_login
+
+  def index
+    @restaurants = Restaurant.all
+  end
+
 
   def new
     @restaurant = Restaurant.new
@@ -8,16 +12,16 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
-      redirect_to restaurant_url
+      redirect_to restaurant_url(@restaurant)
     else
       render :new
     end
   end
 
-  def delete
+  def destroy
     @restaurant = Restaurant.find(params[:id])
     @restaurant.destroy
-    redirect_to restaurant_url
+    redirect_to restaurants_url
   end
 
   def edit
@@ -27,7 +31,7 @@ class RestaurantsController < ApplicationController
   def update
     @restaurant = Restaurant.find(params[:id])
     if @restaurant.update_attributes(restaurant_params)
-      redirect_to restaurant_urls
+      redirect_to restaurant_url(@restaurant)
     else
       render :edit
     end
@@ -35,17 +39,12 @@ class RestaurantsController < ApplicationController
 
 
   def show
-    @restaurants = Restaurant.all
-    @users = User.all
-    @reservations = Reservation.all
+    @restaurant = Restaurant.find(params[:id])
   end
 
   private
   def restaurant_params
-    params.require(:restaurants).permit(:name, :category, :price, :capacity)
+    params.require(:restaurant).permit(:name, :category, :price, :capacity)
   end
 
-  def require_login
-      redirect_to new_session_path if session[:user_id].nil?
-    end
 end
