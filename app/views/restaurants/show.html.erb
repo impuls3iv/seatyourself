@@ -1,4 +1,13 @@
-<h1><%= @restaurant %></h1>
+<h1><%= @restaurant.name %></h1>
 <p>
-  <%= @restaurant.name %>, <%= @restaurant.category %>
+  Category:
+  <%= @restaurant.category %><br>
+  Capacity:
+  <%= @restaurant.capacity %><br>
+  Price:
+  <%= @restaurant.price %><br>
+  Database ID num:
+  <%= @restaurant.id %>
 </p>
+
+<%= link_to 'Back', restaurants_path %>
