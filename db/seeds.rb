@@ -9,7 +9,8 @@ User.create(
 
   email: 'jonny@jon.com',
   username: 'jon11',
-  phone: '6472123456'
+  phone: '6472123456',
+  password: 'test'
 
 )
 
