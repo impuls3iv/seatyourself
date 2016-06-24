@@ -1,18 +1,27 @@
-<h1>My profile</h1>
+<h1>My Profile</h1>
 
-<ul>
-  username:  <%= current_user.username %> <br>
-  email:  <%= current_user.email %> <br>
-  phone:  <%= current_user.phone %> <br>
-  password:  <%= current_user.password %> <br>
-  user_id <%= current_user.id %> <br />
-</ul>
+  <p>
+    <b>Name:</b>  <%= current_user.username %> <br>
+    <b>Email:</b>  <%= current_user.email %> <br>
+    <b>Phone:</b>  <%= current_user.phone %> <br>
+  </p>
 
 <%= link_to "Back to Restaurants", restaurant_url %>
 
 <h2>My Reservations</h2>
-<% @user.reservations.each do |reservation| %>
-  <br> <%= reservation.restaurant.name %> <br>
-  <br> <%= reservation.people %> <br>
-  <br> <%= reservation.time %> <br>
-<% end %>
+
+<table>
+  <% @user.reservations.each do |reservation| %>
+    <tr>
+      <th><b>Date and Time</b></th>
+      <th><b>Guests</b></th>
+      <th><b>Customer</b></th>
+    </tr>
+
+    <tr>
+      <td><%= reservation.time %> </td>
+      <td><%= reservation.people %></td>
+      <td><%= reservation.restaurant.name %></td>
+    <tr>
+  <% end %>
+</table>
