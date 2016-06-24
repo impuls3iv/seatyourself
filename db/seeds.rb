@@ -30,6 +30,7 @@ phone: '9057315555'
 
 )
 
+
 mcd = Restaurant.create(
 
   name: 'McDonalds',

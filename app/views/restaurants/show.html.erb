@@ -7,16 +7,17 @@
   Price: <%= @restaurant.price %><br>
 </p>
 
+<%= link_to 'Make a Reservation Here', new_restaurant_reservation_path(@restaurant) %>
+
 <h3>Our Reservations List:</h3>
 
 <table>
-  <% @restaurant.reservations.each do |reservation| %>
     <tr>
       <th><b>Date and Time</b></th>
       <th><b>Guests</b></th>
       <th><b>Customer</b></th>
     </tr>
-
+  <% @restaurant.reservations.each do |reservation| %>
     <tr>
       <td><%= reservation.time %></td>
       <td><%= reservation.people %></td>
