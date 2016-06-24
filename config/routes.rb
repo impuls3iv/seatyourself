@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :reservations, only: [:show, :new, :create, :destroy]
   end
+  #resources :reservations
+
+
 
   resources :reservations
   # The priority is based upon order of creation: first created -> highest priority.

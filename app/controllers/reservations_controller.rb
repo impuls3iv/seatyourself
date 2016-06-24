@@ -5,13 +5,18 @@ class ReservationsController < ApplicationController
   end
 
   def new
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = Reservation.new
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
+    u = Restaurant.find(params[:restaurant_id])
+    @reservation.restaurant = u
+    @reservation.user = current_user
+    #puts @reservation.restaurant_id
     if @reservation.save
-      redirect_to restaurant_reservation_url(@reservation)
+      redirect_to root_url(@reservation)
     else
       render :new
     end
@@ -42,7 +47,7 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:reservation).permit(:time, :people, :user_id, :restaurant_id, :availability)
+    params.require(:reservation).permit(:time, :people, :availability)
   end
 
 end
