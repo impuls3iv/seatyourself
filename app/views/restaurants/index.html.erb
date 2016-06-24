@@ -1,22 +1,8 @@
 <h1>List of Restaurants</h1>
 
 <% @restaurants.each do |rest|  %>
-  <p>
-    Name:
-    <%= rest.name %><br>
-
-    Category:
-    <%= rest.category %><br>
-
-    Price (1-4):
-    <%= rest.price %><br>
-
-    Capacity:
-    <%= rest.capacity %><br>
-
-    Database ID num:
-    <%= rest.id %><br />
-
-    <%= link_to 'Show', restaurant_path(rest) %> | <%= link_to 'Edit', edit_restaurant_path(rest) %> | <%= link_to 'Delete', rest, method: :delete, data: {confirm: "Are you sure about that?!?!"} %>
-  </p>
+  <p><b>Name:</b> <%= link_to rest.name, restaurant_path(rest) %> <br>
+  <b>Category:</b> <%= rest.category %> <br>
+  <b>Price Range:</b> <%= rest.price %> <br>
+  <b>Capacity:</b> <%= rest.capacity %></p>
 <% end %>

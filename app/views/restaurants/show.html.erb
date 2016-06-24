@@ -1,13 +1,17 @@
 <h1><%= @restaurant.name %></h1>
+
 <p>
-  Category:
-  <%= @restaurant.category %><br>
-  Capacity:
-  <%= @restaurant.capacity %><br>
-  Price:
-  <%= @restaurant.price %><br>
-  Database ID num:
-  <%= @restaurant.id %>
+  Category: <%= @restaurant.category %><br>
+  Capacity: <%= @restaurant.capacity %><br>
+  Price: <%= @restaurant.price %><br>
 </p>
 
-<%= link_to 'Back', restaurants_path %>
+<h3>Our Reservations List:</h3>
+
+<% @restaurant.reservations.each do |reservation| %>
+  <p><b>Customer:</b> <%= reservation.user.username %></p>
+  <p><b># of people:</b> <%= reservation.people %></p>
+  <p><b>Date and Time:</b> <%= reservation.time %></p>
+<% end %>
+
+<%= link_to 'Back to Restaurants', restaurants_path %>
