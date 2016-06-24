@@ -1,0 +1,10 @@
+
+    <div class="dropdown">
+      <%= form_for @reservation do |f| %>
+      <%= f.select(:people, Home::CLASS_PEOPLE) %>
+      <%= f.date_field :time %>
+      <%= f.select(:people, Home::CLASS_HOUR) %>
+      <%= f.text_field :people %>
+      <%= f.submit "Search" %>
+      <% end %>
+    </div>
