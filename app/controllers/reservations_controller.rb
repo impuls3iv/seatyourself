@@ -5,11 +5,11 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @reservations = Reservation.new
+    @reservation = Reservation.new
   end
 
   def create
-    @reservations = Reservation.new(reservation_params)
+    @reservation = Reservation.new(reservation_params)
     if @reservation.save
       redirect_to restaurant_reservation_url(@reservation)
     else
@@ -42,7 +42,7 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:reservation).permit(:time, :people, :user_id, :restaurant_id, :availability)
+    params.require(:reservation).permit(:time, :people, :availability)
   end
 
 end
