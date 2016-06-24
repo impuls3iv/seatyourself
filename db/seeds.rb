@@ -39,7 +39,7 @@ mcd = Restaurant.create(
 #price levels are 1, 2, 3, 4
 )
 
-dq =Restaurant.create(
+dq = Restaurant.create(
 
   name: 'DQ',
   category: 'fast-food',
