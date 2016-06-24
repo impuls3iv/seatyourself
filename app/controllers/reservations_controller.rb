@@ -5,11 +5,11 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @reservations = Reservation.new
+    @reservation = Reservation.new
   end
 
   def create
-    @reservations = Reservation.new(reservation_params)
+    @reservation = Reservation.new(reservation_params)
     if @reservation.save
       redirect_to reservation_url(@reservation)
     else
