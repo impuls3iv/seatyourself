@@ -6,8 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(
-
+jon = User.create(
   email: 'jonny@jon.com',
   username: 'jon11',
   phone: '6472123456',
@@ -15,7 +14,7 @@ User.create(
 
 )
 
-User.create(
+sal = User.create(
 
 email: 'sally@jon.com',
 username: 'sal11',
@@ -23,7 +22,7 @@ phone: '4168587777'
 
 )
 
-User.create(
+mik = User.create(
 
 email: 'mike@jon.com',
 username: 'mike11',
@@ -31,7 +30,7 @@ phone: '9057315555'
 
 )
 
-Restaurant.create(
+mcd = Restaurant.create(
 
   name: 'McDonalds',
   category: 'fast-food',
@@ -40,7 +39,7 @@ Restaurant.create(
 #price levels are 1, 2, 3, 4
 )
 
-Restaurant.create(
+dq = Restaurant.create(
 
   name: 'DQ',
   category: 'fast-food',
@@ -49,7 +48,7 @@ Restaurant.create(
 #price levels are 1, 2, 3, 4
 )
 
-Restaurant.create(
+subw = Restaurant.create(
 
   name: 'Subway',
   category: 'sandwiches',
@@ -68,8 +67,8 @@ Reservation.create(
 
   time: Time.now,
   people: 5,
-  user_id: 1,
-  restaurant_id: 1,
+  user: jon,
+  restaurant: mcd,
   availability: 1
 
 )
@@ -78,8 +77,8 @@ Reservation.create(
 
   time: "01/01/2012 23:59:59",
   people: 2,
-  user_id: 1,
-  restaurant_id: 2,
+  user: sal,
+  restaurant: subw,
   availability: 1
 
 )
@@ -87,8 +86,8 @@ Reservation.create(
 
   time: 20170621,
   people: 2,
-  user_id: 1,
-  restaurant_id: 1,
+  user: mik,
+  restaurant: dq,
   availability: 1
 
 )
@@ -96,8 +95,8 @@ Reservation.create(
 
   time: 20170621,
   people: 2,
-  user_id: 1,
-  restaurant_id: 1,
+  user: jon,
+  restaurant: dq,
   availability: 1
 
 )
