@@ -1,9 +1,0 @@
-<div class="center">
-<h1>New Reservation</h1>
-
-<%= form_for @reservation do |r| %>
-  People <%= r.text_field :people %> 
-  Time:  <%= r.date_field :time %> <br>
-  <%= r.submit "Search" %>
-<% end %>
-</div>
