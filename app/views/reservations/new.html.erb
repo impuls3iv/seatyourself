@@ -1,6 +1,6 @@
 <h1>Add a Reservation</h1>
 
-<%= form_for @reservation  do |f| %>
+<%= form_for [@restaurant, @reservation]  do |f| %>
 
   <div class="field">
     <%= f.label :time %>

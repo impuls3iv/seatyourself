@@ -5,13 +5,14 @@ class ReservationsController < ApplicationController
   end
 
   def new
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = Reservation.new
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
-      redirect_to restaurant_reservation_url(@reservation)
+      redirect_to root_url(@reservation)
     else
       render :new
     end
