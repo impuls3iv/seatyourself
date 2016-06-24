@@ -9,10 +9,20 @@
 
 <h3>Our Reservations List:</h3>
 
-<% @restaurant.reservations.each do |reservation| %>
-  <p><b>Customer:</b> <%= reservation.user.username %></p>
-  <p><b># of people:</b> <%= reservation.people %></p>
-  <p><b>Date and Time:</b> <%= reservation.time %></p>
-<% end %>
+<table>
+  <% @restaurant.reservations.each do |reservation| %>
+    <tr>
+      <th><b>Date and Time</b></th>
+      <th><b>Guests</b></th>
+      <th><b>Customer</b></th>
+    </tr>
+
+    <tr>
+      <td><%= reservation.time %></td>
+      <td><%= reservation.people %></td>
+      <td><%= reservation.user.username %></td>
+    <tr>
+  <% end %>
+</table>
 
 <%= link_to 'Back to Restaurants', restaurants_path %>

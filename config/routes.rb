@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root 'restaurants#index'
 
   resources :users
+
   resources :sessions, only: [:new, :create, :destroy]
+
   resources :restaurants do
-    resources :reservations, only: [:show, :create, :destroy]
+    resources :reservations, only: [:show, :new, :create, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
