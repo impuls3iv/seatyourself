@@ -1,0 +1,15 @@
+<h1>Your Reservation</h1>
+<p>
+  Time:
+  <%= @reservation.time %><br>
+  People:
+  <%= @reservation.people %><br>
+  User name:
+  <%= @reservation.user.username %><br>
+  Restaurant name:
+  <%= @reservation.restaurant.name %><br>
+  Availability:
+  <%= @reservation.availability %><br>
+</p>
+
+<%= link_to 'Back', reservations_path %> | <%= link_to 'Edit', edit_reservation_path(@reservation) %> 
