@@ -4,14 +4,34 @@
   <title>SeatYourself</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <%= csrf_meta_tags %>
 </head>
   <body>
-
+    <!-- Message error -->
+    <div class="flash-message">
+      <% if flash[:notice] %>
+        <!-- Add Bootstrap CSS message alert -->
+          <p id="notice"> <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+       <li><%= flash[:notice] %></li>
+      </div>
+      <% end %>
+      <% if flash[:alert] %>
+          <p id="alert">
+            <div class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+         <li><%= flash[:alert] %></li>
+        </div>
+      <% end %>
+    </div>
   <%= yield %>
 
   </body>
-  <footer>
+  <footer class="center">
+    <!-- Link log in - log out - User's profile -->
     <p class="userinfo">
       <% if current_user %>
       Signed in as <%= link_to current_user.username, user_path(current_user.id) %>.

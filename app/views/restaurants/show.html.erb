@@ -1,13 +1,15 @@
-<h1><%= @restaurant.name %></h1>
-<p>
-  Category:
-  <%= @restaurant.category %><br>
-  Capacity:
-  <%= @restaurant.capacity %><br>
-  Price:
-  <%= @restaurant.price %><br>
-  Database ID num:
-  <%= @restaurant.id %>
-</p>
+<div class="center">
+  <h1><%= @restaurant.name %></h1>
+  <p>
+    Category:
+    <%= @restaurant.category %><br>
+    Capacity:
+    <%= @restaurant.capacity %><br>
+    Price:
+    <%= @restaurant.price %><br>
+    Database ID num:
+    <%= @restaurant.id %>
+  </p>
 
-<%= link_to 'Back', restaurants_path %>
+  <%= link_to 'Back', restaurants_path %>
+</div>

@@ -65,7 +65,7 @@ Restaurant.create(
 
 Reservation.create(
 
-  time: 20160621,
+  time: Time.now,
   people: 5,
   user_id: 13,
   restaurant_id: 1,
@@ -75,7 +75,7 @@ Reservation.create(
 
 Reservation.create(
 
-  time: 20170621,
+  time: "01/01/2012 23:59:59",
   people: 2,
   user_id: 13,
   restaurant_id: 2,
