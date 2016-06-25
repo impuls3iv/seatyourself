@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     #puts @reservation.restaurant_id
     if @reservation.save
-      redirect_to root_url(@reservation)
+      redirect_to restaurants_path
     else
       render :new
     end
