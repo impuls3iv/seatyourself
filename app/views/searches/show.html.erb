@@ -1,0 +1,16 @@
+<h1>Search results:</h1>
+
+<p><%= link_to "Back", new_search_path%></p>
+
+<% if @search.search_restaurants.empty? %>
+  <p>No Record Founded! </p>
+<% else %>
+  <% @search.search_restaurants.each do |c| %>
+    <br />
+    <div class="field">
+      <h1>Name: <%= c.name %></h1>
+      <h1>Category: <%= c.category %></h1>
+      <h1>Price: <%= c.price %></h1>
+    </div>
+    <% end %>
+<% end %>
