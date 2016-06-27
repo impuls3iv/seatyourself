@@ -1,5 +1,10 @@
 <h1>Add a Reservation</h1>
 
+<p>
+  Hi <%= current_user.username %>!!! <br>
+  Please add the details for your reservation at <%= @restaurant.name %>.
+</p> 
+
 <%= form_for [@restaurant, @reservation]  do |f| %>
 
   <div class="field">
