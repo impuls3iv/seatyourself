@@ -6,21 +6,15 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.search(params[:search])
   end
 
-
-
   def show
     @restaurant = Search.find(params[:restaurant_id])
   end
-
 
   def new
     @restaurant = Restaurant.new
   end
 
   def create
-    params.permit!
-
-    @search = Search.create!(params[:search])
     @search = Search.find(params[:id])
     redirect_to :search
 
@@ -50,7 +44,6 @@ class RestaurantsController < ApplicationController
       render :edit
     end
   end
-
 
   def show
     @restaurant = Restaurant.find(params[:id])

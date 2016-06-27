@@ -8,9 +8,10 @@
   <% @search.search_restaurants.each do |c| %>
     <br />
     <div class="field">
-      <h1>Name: <%= c.name %></h1>
-      <h1>Category: <%= c.category %></h1>
-      <h1>Price: <%= c.price %></h1>
+      <p>Name: <%= c.name %></p>
+      <p>Category: <%= c.category %></p>
+      <p>Price: <%= c.price %></p>
+      <p>Capacity: <%= c.capacity %></p>
     </div>
     <% end %>
 <% end %>

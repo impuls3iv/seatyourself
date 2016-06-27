@@ -1,24 +1,36 @@
-<div class="center">
-  <div class="background-home">
+<div class="center background-home">
+  <div class="content-center">
+<div class="logo">
+<!-- Insert the logo png -->
+</div>
 
-
-
-  <h1>Search</h1>
-
+  <h1>Find a Table</h1>
   <%= form_for @search do |s| %>
 
     <div class="field">
-      <%= s.label :category %>  <br />
-      <%= s.select :category, options_for_select(@categories), :include_blank => true %>
+      <p><%= s.label :people %></p>
+      <p><%= s.text_field :people %></p>
     </div>
 
     <div class="field">
-      <p><%= s.label :min_price, "Min Price" %> - <%= s.text_field :min_price, size: 10 %></p>
-      <p><%= s.label :max_price, "Max Price" %> - <%= s.text_field :max_price, size: 10 %></p>
+      <p><%= s.label :category %></p>
+      <p><%= s.select :category, options_for_select(@categories), :include_blank => true %></p>
+    </div>
+
+    <div class="field">
+      <p><%= s.label :min_price, "Min Price" %></p>
+      <p><%= s.number_field :min_price %></p>
+      <p><%= s.label :max_price, "Max Price" %></p>
+      <p><%= s.number_field :max_price %></p>
+    </div>
+
+    <div class="field">
+      <p><%= s.label :location %></p>
+      <p><%= s.text_field :location %></p>
     </div>
 
     <div class="actions">
-      <%= s.submit "Search"%>
+      <p><%= s.submit "Search"%></p>
     </div>
 
     <% end %>
