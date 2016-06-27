@@ -5,7 +5,7 @@
 .background-home {
   background: url(restaurant-background.jpg);
   background-size: 1226px;
-  height: 728px;
+  height: 100%;
 }
 
 .content-center {
@@ -26,4 +26,19 @@
   width: 100px;
   border-style: solid;
   border-width: 3px;
+  border-color: white;
+}
+
+#backbutton a {
+  color: white;
+  
+}
+
+.center {
+  background-color: black;
+}
+
+.userinfo a {
+  color: white;
+  width: 100%;
 }
