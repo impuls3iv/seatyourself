@@ -5,6 +5,7 @@
   Category: <%= @restaurant.category %><br>
   Capacity: <%= @restaurant.capacity %><br>
   Price: <%= @restaurant.price %><br>
+  Location: <%= @restaurant.city %><br>
 </p>
 
 <%= link_to 'Make a Reservation Here', new_restaurant_reservation_path(@restaurant) %>

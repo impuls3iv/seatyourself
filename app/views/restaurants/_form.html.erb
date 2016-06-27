@@ -21,10 +21,9 @@
   </div>
 
   <div class="field">
-    <%= f.label :price %>
-    <%= f.number_field :price %>
+    <%= f.label :price%>
+    <%= f.number_field :price%>
   </div>
-
 
   <div class="field">
     <%= f.label :capacity %>
@@ -32,6 +31,10 @@
   </div>
 
   <div class="field">
+
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+
     <%= f.label :open_hour %>
     <%= f.number_field :open_hour %>
   </div>
@@ -39,6 +42,7 @@
   <div class="field">
     <%= f.label :close_hour %>
     <%= f.number_field :close_hour %>
+
   </div>
 
   <div class="actions">

@@ -47,6 +47,11 @@ class ReservationsController < ApplicationController
     redirect_to reservations_url
   end
 
+  def search
+    @reservation = Reservation.new
+  end
+
+
   private
   def reservation_params
     params.require(:reservation).permit(:time, :people, :availability)

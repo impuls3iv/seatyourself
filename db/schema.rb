@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160627182112) do
 
+
   create_table "reservations", force: :cascade do |t|
     t.datetime "time"
     t.integer  "people"
@@ -36,6 +37,16 @@ ActiveRecord::Schema.define(version: 20160627182112) do
     t.string   "address"
     t.string   "city"
     t.integer  "user_id"
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.string   "category"
+    t.integer  "min_price"
+    t.integer  "max_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "people"
+    t.string   "location"
   end
 
   create_table "users", force: :cascade do |t|
