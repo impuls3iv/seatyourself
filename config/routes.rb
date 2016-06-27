@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'restaurants#index'
+  root 'searches#new'
 
   resources :searches
   resources :users
