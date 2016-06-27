@@ -14,9 +14,11 @@ class ReservationsController < ApplicationController
     u = Restaurant.find(params[:restaurant_id])
     @reservation.restaurant = u
     @reservation.user = current_user
-    #puts @reservation.restaurant_id
+
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    
     if @reservation.save
-      redirect_to root_url(@reservation)
+      redirect_to restaurant_path(@restaurant)
     else
       render :new
     end

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_url, notice: "Sign in!"
+      redirect_to restaurants_path, notice: "Sign in!"
     else
       render :new
     end

@@ -6,6 +6,7 @@
   <% end %>
 <%= link_to 'New Search', new_search_path %>
 
+  <h1>List of Restaurants</h1><br><br>
 
 <% @restaurants.each do |rest|  %>
 
@@ -17,7 +18,7 @@
     <b>ID Num of DB</b> <%= rest.id %><br>
     <b>Location:</b><%= rest.city %><br>
   </p>
-    <%= link_to 'Show', restaurant_path(rest) %> | <%= link_to 'Edit', edit_restaurant_path(rest) %> | <%= link_to 'Delete', rest, method: :delete, data: {confirm: "Are you sure about that?!?!"} %>
+    <%= link_to 'Show', restaurant_path(rest) %> | <%= link_to 'Edit', edit_restaurant_path(rest) %> | <%= link_to 'Delete', rest, method: :delete, data: {confirm: "Are you sure about that?!?!"} %><br><br><br>
 <% end %>
 
 </div>
