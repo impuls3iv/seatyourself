@@ -3,13 +3,13 @@
 <p>
   Hi <%= current_user.username %>!!! <br>
   Please add the details for your reservation at <%= @restaurant.name %>.
-</p> 
+</p>
 
 <%= form_for [@restaurant, @reservation]  do |f| %>
 
   <div class="field">
     <%= f.label :time %>
-    <%= f.number_field :time %>
+    <%= f.time_field :time %>
   </div>
 
   <div class="field">
