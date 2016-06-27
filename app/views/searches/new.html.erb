@@ -8,6 +8,11 @@
   <%= form_for @search do |s| %>
 
     <div class="field">
+      <p><%= s.label :time %></p>
+      <p><%= s.date_field :time %></p>
+    </div>
+
+    <div class="field">
       <p><%= s.label :people %></p>
       <p><%= s.text_field :people %></p>
     </div>

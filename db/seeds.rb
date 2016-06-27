@@ -19,7 +19,7 @@ sal = User.create(
 email: 'sally@jon.com',
 username: 'sal11',
 phone: '4168587777'
-
+password: 'test'
 )
 
 mik = User.create(
@@ -27,7 +27,7 @@ mik = User.create(
 email: 'mike@jon.com',
 username: 'mike11',
 phone: '9057315555'
-
+password: 'test'
 )
 
 
