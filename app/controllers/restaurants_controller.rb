@@ -14,8 +14,8 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @search = Search.find(params[:id])
-    redirect_to :search
+    # @search = Search.find(params[:id])
+    # redirect_to :search
 
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
