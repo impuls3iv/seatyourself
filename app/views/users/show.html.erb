@@ -26,6 +26,23 @@
   <% end %>
 </table>
 
-
-
 <h2>Reservations For Restaurant</h2>
+  <% @restaurants.each do |restaurant| %>
+    <% if current_user == restaurant.user_id %>
+      <table>
+        <tr>
+          <th><b>Date and Time</b></th>
+          <th><b>Guests</b></th>
+          <th><b>Customer</b></th>
+        </tr>
+
+        <% @restaurant.reservations.each do |reservation| %>
+          <tr>
+            <td><%= reservation.time %></td>
+            <td><%= reservation.people %></td>
+            <td><%= reservation.user.username %></td>
+          <tr>
+          <% end %>
+    <% end %>
+  <% end %>
+</table>

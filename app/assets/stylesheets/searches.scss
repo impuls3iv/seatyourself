@@ -9,7 +9,6 @@
 }
 
 .content-center {
-  color: #ffffff;
   margin-top: 60px;
 }
 
@@ -17,4 +16,15 @@
   background: url(seatyourself.png);
   height: 100px;
 
+}
+
+.words {
+  color: white;
+}
+
+#backbutton {
+  margin-left: 45%;
+  width: 100px;
+  border-style: solid;
+  border-width: 3px;
 }

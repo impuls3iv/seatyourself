@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-jon = User.create(
+jon = User.create!(
   email: 'jonny@jon.com',
   username: 'jon11',
   phone: '6472123456',
@@ -14,50 +14,58 @@ jon = User.create(
 
 )
 
-sal = User.create(
-
+sal = User.create!(
 email: 'sally@jon.com',
 username: 'sal11',
-phone: '4168587777'
+phone: '4168587777',
 password: 'test'
 )
 
-mik = User.create(
+mik = User.create!(
 
 email: 'mike@jon.com',
 username: 'mike11',
-phone: '9057315555'
+phone: '9057315555',
 password: 'test'
 )
 
 
-mcd = Restaurant.create(
+mcd = Restaurant.create!(
 
   name: 'McDonalds',
   category: 'fast-food',
   price: 1,
   capacity: 50,
-  city: 'Toronto'
+  city: 'Toronto',
+  address: '123 avenue',
+  open_hour: 9,
+  close_hour: 8
 #price levels are 1, 2, 3, 4
 )
 
-dq = Restaurant.create(
+dq = Restaurant.create!(
 
   name: 'DQ',
   category: 'fast-food',
   price: 2,
   capacity: 25,
-  city: 'Quebec'
+  city: 'Quebec',
+  address: '12345 avenue',
+  open_hour: 9,
+  close_hour: 8
 #price levels are 1, 2, 3, 4
 )
 
-subw = Restaurant.create(
+subw = Restaurant.create!(
 
   name: 'Subway',
   category: 'sandwiches',
   price: 2,
   capacity: 10,
-  city: 'Vancouver'
+  city: 'Vancouver',
+  address: '12343 avenue',
+  open_hour: 9,
+  close_hour: 8
 #price levels are 1, 2, 3, 4
 )
 #
@@ -67,7 +75,7 @@ subw = Restaurant.create(
 # t.integer :restaurant_id
 # t.boolean :availability
 
-Reservation.create(
+Reservation.create!(
 
   time: Time.now,
   people: 5,
@@ -77,7 +85,7 @@ Reservation.create(
 
 )
 
-Reservation.create(
+Reservation.create!(
 
   time: "01/01/2012 23:59:59",
   people: 2,
@@ -86,7 +94,7 @@ Reservation.create(
   availability: 1
 
 )
-Reservation.create(
+Reservation.create!(
 
   time: 20170621,
   people: 2,
@@ -95,7 +103,7 @@ Reservation.create(
   availability: 1
 
 )
-Reservation.create(
+Reservation.create!(
 
   time: 20170621,
   people: 2,
