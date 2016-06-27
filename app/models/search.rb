@@ -1,5 +1,14 @@
 class Search < ActiveRecord::Base
 
+  # Control on date for past date 
+  validate :not_past_date
+
+  def not_past_date
+    if self.time < Date.today
+      errors.add(:time, 'not in past')
+    end
+  end
+
   CLASS_PEOPLE = ["1 Person","2 People","3 People", "4 People", "5 People"]
 
   CLASS_HOUR = ["12pm", "1pm", "2pm", "3pm", " 4pm", "5pm"]
