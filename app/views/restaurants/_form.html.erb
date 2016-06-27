@@ -1,31 +1,28 @@
 <%= form_for(@restaurant) do |f| %>
-<!--
-t.string   "name"
-t.string   "category"
-t.integer  "price"
-t.integer  "capacity" -->
 
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
-
   <div class="field">
     <%= f.label :category %>
     <%= f.text_field :category %>
   </div>
-
 
   <div class="field">
     <%= f.label :price%>
     <%= f.number_field :price%>
   </div>
 
-
   <div class="field">
     <%= f.label :capacity %>
     <%= f.number_field :capacity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
   </div>
 
   <div class="actions">

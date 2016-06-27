@@ -36,7 +36,8 @@ mcd = Restaurant.create(
   name: 'McDonalds',
   category: 'fast-food',
   price: 1,
-  capacity: 50
+  capacity: 50,
+  city: 'Toronto'
 #price levels are 1, 2, 3, 4
 )
 
@@ -45,7 +46,8 @@ dq = Restaurant.create(
   name: 'DQ',
   category: 'fast-food',
   price: 2,
-  capacity: 25
+  capacity: 25,
+  city: 'Quebec'
 #price levels are 1, 2, 3, 4
 )
 
@@ -54,7 +56,8 @@ subw = Restaurant.create(
   name: 'Subway',
   category: 'sandwiches',
   price: 2,
-  capacity: 10
+  capacity: 10,
+  city: 'Vancouver'
 #price levels are 1, 2, 3, 4
 )
 #
