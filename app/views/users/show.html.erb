@@ -7,7 +7,7 @@
     <b>Phone:</b>  <%= current_user.phone %> <br>
   </p>
 
-  <%= link_to "Back to Restaurants", restaurant_url %>
+  <%= link_to "Back to Restaurants", restaurant_url %> | <%= link_to "Add a New Restaurant", new_restaurant_url %>
 
 <h2>My Reservations</h2>
 
@@ -27,7 +27,8 @@
 </table>
 
 <h2>Reservations For Restaurant</h2>
-  <% @restaurants.each do |restaurant| %>
+
+  <% Restaurant.all.each do |restaurant| %>
     <% if current_user == restaurant.user_id %>
       <table>
         <tr>

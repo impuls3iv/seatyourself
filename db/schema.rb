@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160627182112) do
 
-
   create_table "reservations", force: :cascade do |t|
     t.datetime "time"
     t.integer  "people"
