@@ -15,10 +15,11 @@ class ReservationsController < ApplicationController
     u = Restaurant.find(params[:restaurant_id])
     @reservation.restaurant = u
     @reservation.user = current_user
-
+    capacity_update
     @restaurant = Restaurant.find(params[:restaurant_id])
 
     if @reservation.save
+
       redirect_to restaurant_path(@restaurant)
     else
       render :new
