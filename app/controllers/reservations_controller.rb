@@ -7,7 +7,7 @@ class ReservationsController < ApplicationController
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = Reservation.new
-    @search = Search.find(params[:search_id])
+    @search = Search.last
   end
 
   def create
@@ -16,8 +16,15 @@ class ReservationsController < ApplicationController
     @reservation.restaurant = u
     @reservation.user = current_user
     @restaurant = Restaurant.find(params[:restaurant_id])
-
+    @restaurant.capacity -= @reservation.people
+    @restaurant.save
     if @reservation.save
+
+      restaurant_capacity = @restaurant.capacity
+      restaurant_id = @restaurant.id
+
+      # Reservation.reduce_capacity_when_reserved(restaurant_capacity, restaurant_id)
+
       redirect_to restaurant_path(@restaurant)
     else
       render :new
