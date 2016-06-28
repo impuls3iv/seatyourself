@@ -8,10 +8,7 @@ class ReservationsController < ApplicationController
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = Reservation.new
-<<<<<<< HEAD
-=======
     @search = Search.last
->>>>>>> 3a1e8ce43b6b07b9c6b6d40a4c0f379bd1d194b8
   end
 
   def create
