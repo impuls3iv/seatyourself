@@ -3,6 +3,7 @@ class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
     @reservation = Reservation.new
+
   end
 
   def show
@@ -48,7 +49,7 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:name, :category, :price, :capacity, :city)
+    params.require(:restaurant).permit(:name, :category, :price, :capacity, :address, :city)
   end
 
 end
