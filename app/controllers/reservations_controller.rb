@@ -18,6 +18,7 @@ class ReservationsController < ApplicationController
 
     @restaurant = Restaurant.find(params[:restaurant_id])
     @restaurant.capacity -= @reservation.people
+    @restaurant.save
     if @reservation.save
 
       restaurant_capacity = @restaurant.capacity
