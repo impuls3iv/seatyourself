@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+  before_action :ensure_logged_in, only: [:create, :destroy]
 
   def index
     @reservations = Reservation.all
@@ -26,6 +27,7 @@ class ReservationsController < ApplicationController
       # Reservation.reduce_capacity_when_reserved(restaurant_capacity, restaurant_id)
 
       redirect_to restaurant_path(@restaurant)
+
     else
       render :new
     end
@@ -54,14 +56,13 @@ class ReservationsController < ApplicationController
     redirect_to reservations_url
   end
 
-  def search
-    @reservation = Reservation.new
-  end
-
-
   private
   def reservation_params
+<<<<<<< HEAD
+    params.require(:reservation).permit(:time, :people, :availability)
+=======
     params.require(:reservation).permit(:time, :people, :hour)
+>>>>>>> 3a1e8ce43b6b07b9c6b6d40a4c0f379bd1d194b8
   end
 
 end
