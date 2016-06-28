@@ -3,24 +3,23 @@
 <p>
   Hi <%= current_user.username %>!!! <br>
   Please add the details for your reservation at <%= @restaurant.name %>.
-</p> 
+</p>
+
+People: <%= @search.people %><br />
+Time: <%= @search.time %>
+Hour: <%= @search.hour %>
 
 <%= form_for [@restaurant, @reservation]  do |f| %>
 
-  <div class="field">
-    <%= f.label :time %>
-    <%= f.number_field :time %>
-  </div>
 
-  <div class="field">
-    <%= f.label :people %>
-    <%= f.number_field :people %>
-  </div>
-
+<%= f.hidden_field :people, :value => @search.people %>
+<%= f.hidden_field :time, :value => @search.time %>
+<%= f.hidden_field :hour, :value => @search.hour %>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
 
 <% if @reservation.errors.any? %>
   <div id="error_explanation">

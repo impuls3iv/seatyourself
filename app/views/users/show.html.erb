@@ -17,7 +17,7 @@
       <th><b>Guests</b></th>
       <th><b>Customer</b></th>
     </tr>
-  <% @user.reservations.each do |reservation| %>
+  <% @reservations.each do |reservation| %>
     <tr>
       <td><%= reservation.time %> </td>
       <td><%= reservation.people %></td>
@@ -26,9 +26,16 @@
   <% end %>
 </table>
 
+<h2>My Restaurants:</h2>
+  <% @restaurants.each do |list| %>
+    <% if @current_user.user_id == restaurant.user.user_id %>
+    <%= current_user.restaurant.name %>
+    <% end %>
+  <% end %>
+
 <h2>Reservations For Restaurant</h2>
 
-  <% Restaurant.all.each do |restaurant| %>
+  <% @users.restaurants.each do |restaurant| %>
     <% if current_user == restaurant.user_id %>
       <table>
         <tr>

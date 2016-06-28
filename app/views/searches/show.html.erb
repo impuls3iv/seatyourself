@@ -1,19 +1,22 @@
-<h1>Search results:</h1>
+<div class="center">
+  <h1>Search results:</h1>
 
-<p><%= link_to "Back", new_search_path%></p>
+  <p><%= link_to "Back", new_search_path%></p>
+  <h3>Available Tables for <%= @search.people %> in <%= @search.time %>.</h3>
 
-<% if @search.search_restaurants.empty? %>
-  <p>No Record Founded! </p>
-<% else %>
-  <% @search.search_restaurants.each do |c| %>
-    <br />
-    <div class="field">
-      <p>Name: <%= c.name %></p>
-      <p>Category: <%= c.category %></p>
-      <p>Price: <%= c.price %></p>
-      <p>Capacity: <%= c.capacity %></p>
-      <p>Location: <%= c.city %></p>
-      <%= link_to 'Make a Reservation Here', new_restaurant_reservation_path(c) %>
-    </div>
-    <% end %>
-<% end %>
+  <% if @search.search_restaurants.empty? %>
+    <p>No Record Founded! </p>
+  <% else %>
+    <% @search.search_restaurants.each do |c| %>
+      <br />
+      <div class="field">
+        <p>Name: <%= c.name %></p>
+        <p>Category: <%= c.category %></p>
+        <p>Price: <%= c.price %></p>
+        <p>Capacity: <%= c.capacity %></p>
+        <p>Location: <%= c.city %></p>
+        <%= link_to 'Make a Reservation Here', new_restaurant_reservation_path(c, search_id: @search) %> 
+      </div>
+      <% end %>
+  <% end %>
+</div>

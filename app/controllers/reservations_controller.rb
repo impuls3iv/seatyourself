@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+  before_action :ensure_logged_in, only: [:create, :destroy]
 
   def index
     @reservations = Reservation.all
@@ -14,11 +15,9 @@ class ReservationsController < ApplicationController
     u = Restaurant.find(params[:restaurant_id])
     @reservation.restaurant = u
     @reservation.user = current_user
-
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    
+    #puts @reservation.restaurant_id
     if @reservation.save
-      redirect_to restaurant_path(@restaurant)
+      redirect_to root_url(@reservation)
     else
       render :new
     end
@@ -46,11 +45,6 @@ class ReservationsController < ApplicationController
     @reservation.destroy
     redirect_to reservations_url
   end
-
-  def search
-    @reservation = Reservation.new
-  end
-
 
   private
   def reservation_params

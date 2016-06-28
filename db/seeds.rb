@@ -19,7 +19,6 @@ email: 'sally@jon.com',
 username: 'sal11',
 phone: '4168587777',
 password: 'test'
-
 )
 
 mik = User.create!(
