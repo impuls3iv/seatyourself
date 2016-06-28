@@ -14,4 +14,11 @@ class Restaurant < ActiveRecord::Base
     end
   end
 
+  private
+
+  def self.capacity(time)
+    self.capacity -= people
+  end
+
+
 end

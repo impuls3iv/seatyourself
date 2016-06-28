@@ -8,6 +8,10 @@ class ReservationsController < ApplicationController
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = Reservation.new
+<<<<<<< HEAD
+=======
+    @search = Search.last
+>>>>>>> 3a1e8ce43b6b07b9c6b6d40a4c0f379bd1d194b8
   end
 
   def create
@@ -15,9 +19,18 @@ class ReservationsController < ApplicationController
     u = Restaurant.find(params[:restaurant_id])
     @reservation.restaurant = u
     @reservation.user = current_user
-    #puts @reservation.restaurant_id
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @restaurant.capacity -= @reservation.people
+    @restaurant.save
     if @reservation.save
-      redirect_to root_url(@reservation)
+
+      restaurant_capacity = @restaurant.capacity
+      restaurant_id = @restaurant.id
+
+      # Reservation.reduce_capacity_when_reserved(restaurant_capacity, restaurant_id)
+
+      redirect_to restaurant_path(@restaurant)
+
     else
       render :new
     end
@@ -48,7 +61,11 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
+<<<<<<< HEAD
     params.require(:reservation).permit(:time, :people, :availability)
+=======
+    params.require(:reservation).permit(:time, :people, :hour)
+>>>>>>> 3a1e8ce43b6b07b9c6b6d40a4c0f379bd1d194b8
   end
 
 end

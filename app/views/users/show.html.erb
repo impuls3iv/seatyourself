@@ -21,10 +21,11 @@
     <tr>
       <td><%= reservation.time %> </td>
       <td><%= reservation.people %></td>
-      <td><%= reservation.restaurant.name %></td>
+      <td><%= reservation.restaurant_id %></td>
     <tr>
   <% end %>
 </table>
+
 
 <h2>My Restaurants:</h2>
   <% @restaurants.each do |list| %>
